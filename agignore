@@ -1,0 +1,12 @@
+*.ai
+*.svg
+.bundle/
+.cache
+.dropbox
+.git/
+log/
+node_modules/
+public/assets
+public/uploads
+tmp/
+vendor/

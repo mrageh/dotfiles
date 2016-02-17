@@ -1,0 +1,459 @@
+Append something to bashrc ...
+
+Installing Homebrew ...
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/Library/...
+/usr/local/share/man/man1/brew.1
+==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+Password:
+==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown Adam /Library/Caches/Homebrew
+==> Downloading and installing Homebrew...
+remote: Counting objects: 4007, done.
+remote: Compressing objects: 100% (3852/3852), done.
+remote: Total 4007 (delta 35), reused 2099 (delta 23), pack-reused 0
+Receiving objects: 100% (4007/4007), 3.28 MiB | 2.36 MiB/s, done.
+Resolving deltas: 100% (35/35), done.
+From https://github.com/Homebrew/homebrew
+ * [new branch]      master     -> origin/master
+HEAD is now at 87a830d fwup: update 0.6.0 bottle.
+==> Installation successful!
+==> Next steps
+Run `brew help` to get started
+
+Append something to bashrc ...
+
+Append something to bashrc ...
+
+Updating Homebrew formulae ...
+Already up-to-date.
+
+Updating Unix tools ...
+==> Downloading https://homebrew.bintray.com/bottles/ctags-5.8_1.el_capitan.bott
+######################################################################## 100.0%
+==> Pouring ctags-5.8_1.el_capitan.bottle.tar.gz
+==> Caveats
+Under some circumstances, emacs and ctags can conflict. By default,
+emacs provides an executable `ctags` that would conflict with the
+executable of the same name that ctags provides. To prevent this,
+Homebrew removes the emacs `ctags` and its manpage before linking.
+
+However, if you install emacs with the `--keep-ctags` option, then
+the `ctags` emacs provides will not be removed. In that case, you
+won't be able to install ctags successfully. It will build but not
+link.
+==> Summary
+🍺  /usr/local/Cellar/ctags/5.8_1: 8 files, 344.5K
+==> Downloading https://homebrew.bintray.com/bottles/git-2.7.1.el_capitan.bottle
+######################################################################## 100.0%
+==> Pouring git-2.7.1.el_capitan.bottle.tar.gz
+==> Caveats
+The OS X keychain credential helper has been installed to:
+  /usr/local/bin/git-credential-osxkeychain
+
+The "contrib" directory has been installed to:
+  /usr/local/share/git-core/contrib
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+
+zsh completion has been installed to:
+  /usr/local/share/zsh/site-functions
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/git
+==> Summary
+🍺  /usr/local/Cellar/git/2.7.1: 1,408 files, 236.3M
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2f.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2f.el_capitan.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2f: 466 files, 11.9M
+==> Downloading https://homebrew.bintray.com/bottles/reattach-to-user-namespace-2.4.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring reattach-to-user-namespace-2.4.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/reattach-to-user-namespace/2.4: 6 files, 33.7K
+==> Installing dependencies for the_silver_searcher: pcre, xz
+==> Installing the_silver_searcher dependency: pcre
+==> Downloading https://homebrew.bintray.com/bottles/pcre-8.38.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring pcre-8.38.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/pcre/8.38: 146 files, 5.4M
+==> Installing the_silver_searcher dependency: xz
+==> Downloading https://homebrew.bintray.com/bottles/xz-5.2.2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring xz-5.2.2.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xz/5.2.2: 59 files, 1.4M
+==> Installing the_silver_searcher
+==> Downloading https://homebrew.bintray.com/bottles/the_silver_searcher-0.31.0.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring the_silver_searcher-0.31.0.el_capitan.bottle.tar.gz
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/the_silver_searcher/0.31.0: 8 files, 99.4K
+==> Installing dependencies for tmux: libevent
+==> Installing tmux dependency: libevent
+==> Downloading https://homebrew.bintray.com/bottles/libevent-2.0.22.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libevent-2.0.22.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libevent/2.0.22: 48 files, 1.6M
+==> Installing tmux
+==> Downloading https://homebrew.bintray.com/bottles/tmux-2.1.el_capitan.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring tmux-2.1.el_capitan.bottle.1.tar.gz
+==> Caveats
+Example configurations have been installed to:
+  /usr/local/opt/tmux/share/tmux/examples
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/tmux/2.1: 15 files, 647.5K
+==> Downloading https://github.com/vim/vim/archive/v7.4.1257.tar.gz
+==> Downloading from https://codeload.github.com/vim/vim/tar.gz/v7.4.1257
+######################################################################## 100.0%
+==> ./configure --prefix=/usr/local --mandir=/usr/local/Cellar/vim/7.4.1257/share/man --enable-multibyte --with-tlib=ncurses --enable-cscope --with-compiledby=Homebrew --enable-perlinterp --enable-pythoni
+==> make
+==> make install prefix=/usr/local/Cellar/vim/7.4.1257 STRIP=true
+🍺  /usr/local/Cellar/vim/7.4.1257: 1,623 files, 22.4M, built in 30 seconds
+==> Installing dependencies for bash: readline
+==> Installing bash dependency: readline
+==> Downloading https://homebrew.bintray.com/bottles/readline-6.3.8.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring readline-6.3.8.el_capitan.bottle.tar.gz
+==> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+OS X provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/readline/lib
+    CPPFLAGS: -I/usr/local/opt/readline/include
+
+==> Summary
+🍺  /usr/local/Cellar/readline/6.3.8: 40 files, 2.0M
+==> Installing bash
+==> Downloading https://homebrew.bintray.com/bottles/bash-4.3.42.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring bash-4.3.42.el_capitan.bottle.tar.gz
+==> Caveats
+In order to use this build of bash as your login shell,
+it must be added to /etc/shells.
+==> Summary
+🍺  /usr/local/Cellar/bash/4.3.42: 59 files, 7.3M
+
+Updating image tools ...
+==> Installing dependencies for imagemagick: libtool, jpeg, libpng, libtiff, freetype
+==> Installing imagemagick dependency: libtool
+==> Downloading https://homebrew.bintray.com/bottles/libtool-2.4.6.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libtool-2.4.6.el_capitan.bottle.tar.gz
+==> Caveats
+In order to prevent conflicts with Apple's own libtool we have prepended a "g"
+so, you have instead: glibtool and glibtoolize.
+==> Summary
+🍺  /usr/local/Cellar/libtool/2.4.6: 69 files, 3.6M
+==> Installing imagemagick dependency: jpeg
+==> Downloading https://homebrew.bintray.com/bottles/jpeg-8d.el_capitan.bottle.2.tar.gz
+######################################################################## 100.0%
+==> Pouring jpeg-8d.el_capitan.bottle.2.tar.gz
+🍺  /usr/local/Cellar/jpeg/8d: 18 files, 712.4K
+==> Installing imagemagick dependency: libpng
+==> Downloading https://homebrew.bintray.com/bottles/libpng-1.6.21.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libpng-1.6.21.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libpng/1.6.21: 17 files, 1.2M
+==> Installing imagemagick dependency: libtiff
+==> Downloading https://homebrew.bintray.com/bottles/libtiff-4.0.6.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libtiff-4.0.6.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libtiff/4.0.6: 259 files, 3.4M
+==> Installing imagemagick dependency: freetype
+==> Downloading https://homebrew.bintray.com/bottles/freetype-2.6.2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring freetype-2.6.2.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/freetype/2.6.2: 60 files, 2.4M
+==> Installing imagemagick
+==> Downloading https://homebrew.bintray.com/bottles/imagemagick-6.9.3-0_1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring imagemagick-6.9.3-0_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/imagemagick/6.9.3-0_1: 1,455 files, 17.6M
+
+Updating testing tools ...
+==> Downloading https://homebrew.bintray.com/bottles/qt-4.8.7_2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring qt-4.8.7_2.el_capitan.bottle.tar.gz
+==> Caveats
+We agreed to the Qt opensource license for you.
+If this is unacceptable you should uninstall.
+
+Qt Designer no longer picks up changes to the QT_PLUGIN_PATH environment
+variable as it was tweaked to search for plug-ins provided by formulae in
+  /usr/local/lib/qt4/plugins
+
+.app bundles were installed.
+Run `brew linkapps qt` to symlink these to /Applications.
+==> Summary
+🍺  /usr/local/Cellar/qt/4.8.7_2: 2,794 files, 112.8M
+
+Updating programming languages ...
+==> Downloading https://homebrew.bintray.com/bottles/libyaml-0.1.6_1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libyaml-0.1.6_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libyaml/0.1.6_1: 7 files, 312.2K
+==> Downloading https://homebrew.bintray.com/bottles/node-5.5.0.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring node-5.5.0.el_capitan.bottle.tar.gz
+
+==> Caveats
+Please note by default only English locale support is provided. If you need
+full locale support you should:
+  `brew reinstall node --with-full-icu`
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/node/5.5.0: 3,135 files, 35.5M
+==> Installing dependencies for rbenv: autoconf, pkg-config, ruby-build
+==> Installing rbenv dependency: autoconf
+==> Downloading https://homebrew.bintray.com/bottles/autoconf-2.69.el_capitan.bottle.4.tar.gz
+######################################################################## 100.0%
+==> Pouring autoconf-2.69.el_capitan.bottle.4.tar.gz
+==> Caveats
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/autoconf
+==> Summary
+🍺  /usr/local/Cellar/autoconf/2.69: 70 files, 3.0M
+==> Installing rbenv dependency: pkg-config
+==> Downloading https://homebrew.bintray.com/bottles/pkg-config-0.29.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring pkg-config-0.29.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/pkg-config/0.29: 10 files, 624.4K
+==> Installing rbenv dependency: ruby-build
+==> Downloading https://github.com/rbenv/ruby-build/archive/v20160130.tar.gz
+==> Downloading from https://codeload.github.com/rbenv/ruby-build/tar.gz/v20160130
+######################################################################## 100.0%
+==> ./install.sh
+🍺  /usr/local/Cellar/ruby-build/20160130: 196 files, 110.1K, built in 2 seconds
+==> Installing rbenv
+==> Downloading https://homebrew.bintray.com/bottles/rbenv-1.0.0.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring rbenv-1.0.0.el_capitan.bottle.tar.gz
+==> Caveats
+Rbenv stores data under ~/.rbenv by default. If you absolutely need to
+store everything under Homebrew's prefix, include this in your profile:
+  export RBENV_ROOT=/usr/local/var/rbenv
+
+To enable shims and autocompletion, run this and follow the instructions:
+  rbenv init
+==> Summary
+🍺  /usr/local/Cellar/rbenv/1.0.0: 35 files, 60K
+
+Updating databases ...
+==> Downloading https://homebrew.bintray.com/bottles/postgresql-9.5.0.el_capitan.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring postgresql-9.5.0.el_capitan.bottle.1.tar.gz
+==> /usr/local/Cellar/postgresql/9.5.0/bin/initdb /usr/local/var/postgres
+==> Caveats
+If builds of PostgreSQL 9 are failing and you have version 8.x installed,
+you may need to remove the previous version first. See:
+  https://github.com/Homebrew/homebrew/issues/2510
+
+To migrate existing data from a previous major version (pre-9.0) of PostgreSQL, see:
+  http://www.postgresql.org/docs/9.5/static/upgrading.html
+
+To migrate existing data from a previous minor version (9.0-9.4) of PosgresSQL, see:
+  http://www.postgresql.org/docs/9.5/static/pgupgrade.html
+
+  You will need your previous PostgreSQL installation from brew to perform `pg_upgrade`.
+  Do not run `brew cleanup postgresql` until you have performed the migration.
+
+To have launchd start postgresql at login:
+  ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+Then to load postgresql now:
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+Or, if you don't want/need launchctl, you can just run:
+  postgres -D /usr/local/var/postgres
+==> Summary
+🍺  /usr/local/Cellar/postgresql/9.5.0: 3,113 files, 35.0M
+==> Downloading https://homebrew.bintray.com/bottles/mysql-5.7.11.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring mysql-5.7.11.el_capitan.bottle.tar.gz
+==> /usr/local/Cellar/mysql/5.7.11/bin/mysqld --initialize-insecure --user=Adam --basedir=/usr/local/Cellar/mysql/5.7.11 --datadir=/usr/local/var/mysql --tmpdir=/tmp
+==> Caveats
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql at login:
+  ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+Then to load mysql now:
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+Or, if you don't want/need launchctl, you can just run:
+  mysql.server start
+==> Summary
+🍺  /usr/local/Cellar/mysql/5.7.11: 12,812 files, 434.6M
+==> Downloading https://homebrew.bintray.com/bottles/redis-3.0.7.el_capitan.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring redis-3.0.7.el_capitan.bottle.1.tar.gz
+==> Caveats
+To have launchd start redis at login:
+  ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+Then to load redis now:
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
+Or, if you don't want/need launchctl, you can just run:
+  redis-server /usr/local/etc/redis.conf
+==> Summary
+🍺  /usr/local/Cellar/redis/3.0.7: 9 files, 876.3K
+/Users/Adam/Library/LaunchAgents/homebrew.mxcl.postgresql.plist -> /usr/local/opt/postgresql/homebrew.mxcl.postgresql.plist
+/Users/Adam/Library/LaunchAgents/homebrew.mxcl.mysql.plist -> /usr/local/opt/mysql/homebrew.mxcl.mysql.plist
+/Users/Adam/Library/LaunchAgents/homebrew.mxcl.redis.plist -> /usr/local/opt/redis/homebrew.mxcl.redis.plist
+
+Configuring Ruby ...
+
+Append something to bashrc ...
+Downloading ruby-2.3.0.tar.bz2...
+-> https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.0.tar.bz2
+Installing ruby-2.3.0...
+Installed ruby-2.3.0 to /Users/Adam/.rbenv/versions/2.3.0
+
+Updating rubygems-update
+Fetching: rubygems-update-2.5.2.gem (100%)
+Successfully installed rubygems-update-2.5.2
+Parsing documentation for rubygems-update-2.5.2
+Installing ri documentation for rubygems-update-2.5.2
+Installing darkfish documentation for rubygems-update-2.5.2
+Done installing documentation for rubygems-update after 1 seconds
+Parsing documentation for rubygems-update-2.5.2
+Done installing documentation for rubygems-update after 0 seconds
+Installing RubyGems 2.5.2
+RubyGems 2.5.2 installed
+Parsing documentation for rubygems-2.5.2
+Installing ri documentation for rubygems-2.5.2
+
+=== 2.5.2 / 2016-01-31
+
+Bug fixes:
+
+* Fix memoization of Gem::Version#prerelease? Pull request #1125 by Matijs van
+  Zuijlen.
+* Handle trailing colons in GEM_PATH, by Damien Robert.
+* Improve the Gemfile `gemspec` method, fixing #1204 and #1033. Pull request
+  #1276 by Michael Papis.
+* Warn only once when a gemspec license is invalid. Pull request #1414 by Samuel
+  E. Giddins.
+* Check for exact constants before using them, fixing Ruby bug #11940. Pull
+  request #1438 by Nobuyoshi Nakada.
+* Fix building C extensions on Ruby 1.9.x on Windows. Pull request #1453 by Marie
+  Markwell.
+* Handle symlinks containing ".." correctly. Pull request #1457 by Samuel E.
+  Giddins.
+
+Minor enhancements:
+
+* Add `--no-rc` flag, which skips loading `.gemrc`. Pull request #1329 by Luis
+  Sagastume.
+* Allow basic auth to be excluded from `allowed_push_host`. By Josh Lane.
+* Add `gem list --exact`, which finds gems by string match instead of regex. Pull
+  request #1344 by Luis Sagastume.
+* Suggest alternatives when gem license is unknown. Pull request #1443 by Samuel
+  E. Giddins.
+* Print a useful error if a binstub expects a newer version of a gem than is
+  installed. Pull request #1407 by Samuel E. Giddins.
+* Allow the (supported) s3:// scheme to be used with `--source`. Pull request
+  #1416 by Dave Adams.
+* Add `--[no-]post-install-message` to `install` and `update`. Pull request #1162
+  by Josef Šimánek.
+* Add `--host` option to `yank`, providing symmetry with `pull`. Pull request
+  #1361 by Mike Virata-Stone.
+* Update bundled Molinillo to 0.4.1. Pull request #1452 by Samuel E. Giddins.
+* Allow calling `build` without '.gemspec'. Pull request #1454 by Stephen
+  Blackstone.
+* Add support for `source` option on gems in Gemfile. Pull request #1355 by
+  Michael Papis.
+* Function correctly when string literals are frozen on Ruby 2.3. Pull request
+  #1408 by Samuel E. Giddins.
+
+=== 2.5.1 / 2015-12-10
+
+Bug fixes:
+
+* Ensure platform sorting only uses strings. Affected binary installs on Windows.
+  Issue #1369 reported by Ryan Atball (among others).
+  Pull request #1375 by Samuel E. Giddins.
+* Revert PR #1332. Unable to reproduce, and nil should be impossible.
+* Gem::Specification#to_fullpath now returns .rb extensions when such a file
+  exists.  Pull request #1114 by y-yagi.
+* RubyGems now handles Net::HTTPFatalError instead of crashing.  Pull
+  request #1314 by Samuel E. Giddins.
+* Updated bundled Molinillo to 0.4.0.  Pull request #1322, #1396 by Samuel E.
+  Giddins.
+* Improved performance of spec loading by reducing likelihood of loading the
+  complete specification.  Pull request #1373 by Aaron Patterson.
+* Improved caching of requirable files  Pull request #1377 by Aaron Patterson.
+* Fixed activation of gems with development dependencies.  Pull request #1388
+  by Samuel E. Giddins.
+* RubyGems now uses the same Molinillo vendoring strategy as Bundler.  Pull
+  request #1397 by Samuel E. Giddins.
+* Fixed documentation of Gem::Requirement.parse.  Pull request #1398 by
+  Juanito Fatas.
+* RubyGems no longer warns when a prerelease gem has prerelease dependencies.
+  Pull request #1399 by Samuel E. Giddins.
+* Fixed Gem::Version documentation example.  Pull request #1401 by Guilherme
+  Goettems Schneider.
+* Updated documentation links to https://.  Pull request #1404 by Suriyaa
+  Kudo.
+* Fixed double word typo.  Pull request #1411 by Jake Worth.
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/Users/Adam/.rbenv/versions/2.3.0/bin/gem
+
+Ruby Interactive (ri) documentation was installed. ri is kind of like man
+pages for ruby libraries. You may access it like this:
+  ri Classname
+  ri Classname.class_method
+  ri Classname#instance_method
+If you do not wish to install this documentation in the future, use the
+--no-document flag, or set it as the default in your ~/.gemrc file. See
+'gem help env' for details.
+
+RubyGems system software updated
+Fetching: bundler-1.11.2.gem (100%)
+Successfully installed bundler-1.11.2
+Parsing documentation for bundler-1.11.2
+Installing ri documentation for bundler-1.11.2
+Done installing documentation for bundler after 3 seconds
+1 gem installed

@@ -1,0 +1,69 @@
+[alias]
+  a = add
+  ap = add --patch
+  aa = add --all --intent-to-add
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit -v
+  cm = commit
+  co = checkout
+  graph = log --oneline --graph --decorate --all
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  me = !UN=$(git config user.name)&& git log --author="\"$UN\"" --pretty=format:'%h %cd %s' --date=short
+  log-fancy  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+  p = push
+  pf = push --force-with-lease
+  ppl = !git log --all --format='%aN <%cE>' | sort -u
+  st = status
+  wdiff  = diff --word-diff=plain
+  padd = add--interactive --patch=stage --
+[color]
+  ui = auto
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+[init]
+  templatedir = ~/.git_template
+[fetch]
+  prune = true
+[merge]
+  ff = only
+[push]
+  default = current
+[commit]
+  template = ~/.gitmessage
+[rebase]
+  autosquash = true
+[user]
+  name  = mrageh
+  email = adam@mrageh.com
+[credential]
+  helper = osxkeychain
+[git-pair]
+  pattern = pairing+%name+%name@futurelearn.com
+  authors = sebjacobs <me@sebjacobs.com>
+  authors = mseckington <mseckington@gmail.com>
+  authors = mocoso <joel.chippindale@futurelearn.com>
+  authors = zetter <zetter@gmail.com>
+  authors = chrislo <chris.lowis@gmail.com>
+  authors = eightbitraptor <matt@eightbitraptor.com>
+  authors = jcoglan <jcoglan@gmail.com>
+  authors = juweez <jusna.begum@futurelearn.com>
+  authors = ma <mark.smith@futurelearn.com>
+  authors = jamesmockett <james.mockett@futurelearn.com>
+  authors = vajdagabor <g.vajda@me.com>
+  authors = rplopes <ricardo.lopes@futurelearn.com>
+  authors = alssndro <alex.mura@futurelearn.com>
+  authors = wannabefro <sam.mctaggart@gmail.com>
+  authors = malpinder <mal.pinder@futurelearn.com>
+  authors = mrageh <adam.magan@futurelearn.com>
+  authors = nicky <nicky.thompson@futurelearn.com>
+  authors = tomstuart <tom@codon.com>
+  authors = urbanautomaton <simon@urbanautomaton.com>
+  authors = victorarias <victor.arias@futurelearn.com>
+  authors = cristinaRO <cristina.rotaru@futurelearn.com>
+[color "diff-highlight"]
+  oldNormal    = red bold
+  oldHighlight = red bold 52
+  newNormal    = green bold
+  newHighlight = green bold 22
