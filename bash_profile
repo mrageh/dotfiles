@@ -1,6 +1,6 @@
-for f in `brew --prefix`/etc/bash_completion.d/*; do
-  source $f
-done
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
