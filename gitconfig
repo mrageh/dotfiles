@@ -50,7 +50,6 @@
   authors = eightbitraptor <matt@eightbitraptor.com>
   authors = jcoglan <jcoglan@gmail.com>
   authors = juweez <jusna.begum@futurelearn.com>
-  authors = ma <mark.smith@futurelearn.com>
   authors = jamesmockett <james.mockett@futurelearn.com>
   authors = vajdagabor <g.vajda@me.com>
   authors = rplopes <ricardo.lopes@futurelearn.com>
@@ -63,6 +62,7 @@
   authors = urbanautomaton <simon@urbanautomaton.com>
   authors = victorarias <victor.arias@futurelearn.com>
   authors = cristinaRO <cristina.rotaru@futurelearn.com>
+  authors = daniel-ferguson <danielferguson@me.com>
 [color "diff-highlight"]
   oldNormal    = red bold
   oldHighlight = red bold 52
