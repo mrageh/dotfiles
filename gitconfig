@@ -16,6 +16,8 @@
   st = status
   wdiff  = diff --word-diff=plain
   padd = add--interactive --patch=stage --
+  rim = rebase -i origin/master
+  con = rebase --continue
 [color]
   ui = auto
 [core]
