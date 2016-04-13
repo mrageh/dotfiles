@@ -10,3 +10,5 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 *.pyc
+vendor/bundle/
+.idea/
