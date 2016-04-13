@@ -35,6 +35,7 @@
   template = ~/.gitmessage
 [rebase]
   autosquash = true
+  autostash = true
 [user]
   name  = mrageh
   email = adam@mrageh.com
