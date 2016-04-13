@@ -35,3 +35,6 @@ g() {
 
 # Source prompt
 source ~/.bash-powerline.sh
+
+# Some direnv stuff
+eval "$(direnv hook bash)"
