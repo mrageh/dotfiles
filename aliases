@@ -32,3 +32,4 @@ alias cw="be cucumber -p wip"
 alias m="bundle exec rake db:migrate db:rollback && bundle exec rake db:migrate"
 alias rk="rake"
 
+__git_complete g __git_main
