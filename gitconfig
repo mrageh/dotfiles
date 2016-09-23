@@ -39,6 +39,7 @@
 [user]
   name  = mrageh
   email = adam@mrageh.com
+  signingkey = 0E5703B7
 [credential]
   helper = osxkeychain
 [git-pair]
