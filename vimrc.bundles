@@ -28,6 +28,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
+Plug 'wakatime/vim-wakatime'
 
 " Add plugins to &runtimepath
 call plug#end()
