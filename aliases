@@ -7,9 +7,10 @@ alias v="$VISUAL"
 alias tlf="tail -f"
 alias l='ls'
 alias lh='ls -Alh'
-alias G='| grep'
-alias M='| less'
-alias L='| wc -l'
+alias G="| ag"
+alias M="| less"
+alias L="| wc -l"
+alias clearall="clear && printf '\e[3J'"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
