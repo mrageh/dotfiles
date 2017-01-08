@@ -7,9 +7,6 @@ export EDITOR=$VISUAL
 
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
-
-export PATH="/usr/local/bin:$PATH"
 
 # npm binaries
 export PATH=/usr/local/share/npm/bin:$PATH
@@ -38,3 +35,7 @@ source ~/.bash-powerline.sh
 
 # Some direnv stuff
 eval "$(direnv hook bash)"
+
+#rbenv setup
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
