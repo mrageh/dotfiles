@@ -45,7 +45,9 @@ set shiftround
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+if (&ft=='go')
+  set list listchars=tab:»·,trail:·,nbsp:·
+endif
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
