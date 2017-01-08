@@ -168,3 +168,7 @@ let g:html_indent_inctags = "html,body,head,tbody"
 
 " Auto format rust
 let g:rustfmt_autosave = 1
+
+" Create folds for ruby
+"let ruby_fold = 1
+"let ruby_foldable_groups = "class do begin case { % string # << if def"
