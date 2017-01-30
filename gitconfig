@@ -18,6 +18,7 @@
   padd = add--interactive --patch=stage --
   rim = rebase -i origin/master
   con = rebase --continue
+  g = grep --break --heading --line-number
 [color]
   ui = auto
 [core]
@@ -73,3 +74,5 @@
   newHighlight = green bold 22
 [diff]
   compactionHeuristic = true
+[grep]
+lineNumber = true
