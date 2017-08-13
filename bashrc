@@ -33,6 +33,9 @@ g() {
 #Setup mysql
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
+#Custom scripts
+export PATH="~/custom/scripts:$PATH"
+
 # Source prompt
 source ~/.bash-powerline.sh
 
