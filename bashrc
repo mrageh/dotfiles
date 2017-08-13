@@ -11,11 +11,6 @@ export PATH="/usr/local/bin:$PATH"
 # npm binaries
 export PATH=/usr/local/share/npm/bin:$PATH
 
-# Go binaires
-export GOPATH=$HOME/programming/learning/golang
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
