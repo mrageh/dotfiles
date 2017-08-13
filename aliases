@@ -11,6 +11,7 @@ alias G="| ag"
 alias M="| less"
 alias L="| wc -l"
 alias clearall="clear && printf '\e[3J'"
+alias clean-fl-remote="git branch -r --merged | grep -v master | grep -v current-production | grep -v current-staging | grep -v staging-sandbox | grep -v sandbox-new | grep -v sandbox-deakin-build-passed | grep -v sandbox-deakin | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
