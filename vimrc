@@ -133,6 +133,9 @@ let g:rspec_command = "!bundle exec rspec {spec}"
 " Drop fold if it set.
 let b:javascript_fold='true'
 
+" Auto format elm code
+let g:elm_format_autosave = 1
+
 " Highlights all occurences when searching
 set hlsearch
 
