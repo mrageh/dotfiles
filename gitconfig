@@ -47,18 +47,12 @@
   pattern = pairing+%name+%name@futurelearn.com
   authors = sebjacobs <me@sebjacobs.com>
   authors = mseckington <mseckington@gmail.com>
-  authors = mocoso <joel.chippindale@futurelearn.com>
   authors = zetter <zetter@gmail.com>
   authors = chrislo <chris.lowis@gmail.com>
   authors = eightbitraptor <matt@eightbitraptor.com>
   authors = jcoglan <jcoglan@gmail.com>
-  authors = juweez <jusna.begum@futurelearn.com>
-  authors = jamesmockett <james.mockett@futurelearn.com>
-  authors = vajdagabor <g.vajda@me.com>
-  authors = rplopes <ricardo.lopes@futurelearn.com>
   authors = alssndro <alex.mura@futurelearn.com>
   authors = wannabefro <sam.mctaggart@gmail.com>
-  authors = malpinder <mal.pinder@futurelearn.com>
   authors = mrageh <adam.magan@futurelearn.com>
   authors = nicky <nicky.thompson@futurelearn.com>
   authors = urbanautomaton <simon@urbanautomaton.com>
@@ -67,6 +61,8 @@
   authors = daniel-ferguson <danielferguson@me.com>
   authors = scarerkite <sarah.knight@futurelearn.com>
   authors = smfeest <stephen.feest@futurelearn.com>
+  authors = mattbee <matt.bee@futurelearn.com>
+  authors = ohthatjames <james.hunt@futurelearn.com>
 [color "diff-highlight"]
   oldNormal    = red bold
   oldHighlight = red bold 52
