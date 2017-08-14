@@ -71,4 +71,4 @@
 [diff]
   compactionHeuristic = true
 [grep]
-lineNumber = true
+  lineNumber = true
