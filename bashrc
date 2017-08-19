@@ -32,7 +32,7 @@ export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="~/custom/scripts:$PATH"
 
 # Source prompt
-source ~/.bash-powerline.sh
+source ~/dotfiles/bash-powerline.sh
 
 # Some direnv stuff
 eval "$(direnv hook bash)"
