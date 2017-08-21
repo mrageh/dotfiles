@@ -24,8 +24,6 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
-[init]
-  templatedir = ~/.git_template
 [fetch]
   prune = true
 [merge]
