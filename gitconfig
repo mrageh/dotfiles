@@ -20,10 +20,11 @@
   con = rebase --continue
   g = grep --break --heading --line-number
 [color]
-  ui = auto
+  ui = true
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [fetch]
   prune = true
 [merge]
@@ -61,12 +62,21 @@
   authors = smfeest <stephen.feest@futurelearn.com>
   authors = mattbee <matt.bee@futurelearn.com>
   authors = ohthatjames <james.hunt@futurelearn.com>
+  authors = roberta <roberta.mataityte@futurelearn.com>
+  authors = tomstuart <tom.stuart@futurelearn.com>
 [color "diff-highlight"]
-  oldNormal    = red bold
-  oldHighlight = red bold 52
-  newNormal    = green bold
-  newHighlight = green bold 22
+  oldNormal = 196 bold #https://jonasjacek.github.io/colors/
+  oldHighlight = 196 bold 52
+  newNormal = 112 bold
+  newHighlight = 112 bold 22
 [diff]
   compactionHeuristic = true
 [grep]
   lineNumber = true
+[color "diff"]
+  meta = 220
+  frag = white bold
+  commit = 220 bold
+  old = 196 bold
+  new = 112 bold
+  whitespace = 196 reverse
