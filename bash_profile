@@ -14,3 +14,7 @@ fi
 #fi */
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+#Setup NVM
+export NVM_DIR="$HOME/.nvm"
+ . "$(brew --prefix nvm)/nvm.sh"

@@ -8,9 +8,6 @@ export EDITOR=$VISUAL
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
 
-# npm binaries
-export PATH=/usr/local/share/npm/bin:$PATH
-
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
