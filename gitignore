@@ -12,4 +12,4 @@ tmp/**/*
 *.pyc
 vendor/bundle/
 .idea/
-vendor
+.git
