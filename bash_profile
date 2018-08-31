@@ -12,3 +12,5 @@ fi
 #else */
 #  eval $(gpg-agent --daemon --log-file /tmp/gpg.log --pinentry-program /usr/local/bin/pinentry-mac) */
 #fi */
+
+export PATH="$HOME/.cargo/bin:$PATH"
