@@ -43,3 +43,6 @@ export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#Enable iex shell history
+export ERL_AFLAGS="-kernel shell_history enabled"
