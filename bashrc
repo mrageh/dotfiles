@@ -40,3 +40,7 @@ eval "$(direnv hook bash)"
 #rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+#Setup go
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
