@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wakatime/vim-wakatime'
 Plug 'elmcast/elm-vim'
+Plug 'rust-lang/rust.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
