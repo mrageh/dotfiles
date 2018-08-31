@@ -168,3 +168,8 @@ let g:rustfmt_autosave = 1
 "let ruby_foldable_groups = "class do begin case { % string # << if def"
 
 map <leader>b :TagbarToggle<CR>
+
+" Vim prettier
+let g:prettier#exec_cmd_async = 1
+let g:prettier#config#bracket_spacing = 'true'
+autocmd FileType javascript set formatprg=prettier\ --stdin
