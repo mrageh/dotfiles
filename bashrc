@@ -41,3 +41,5 @@ eval "$(rbenv init -)"
 #Setup go
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
