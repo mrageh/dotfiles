@@ -13,3 +13,4 @@ tmp/**/*
 vendor/bundle/
 .idea/
 .git
+node_modules/
