@@ -22,6 +22,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'elmcast/elm-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'prettier/vim-prettier'
+Plug 'w0rp/ale'
 
 " Add plugins to &runtimepath
 call plug#end()

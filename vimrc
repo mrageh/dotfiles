@@ -173,3 +173,8 @@ map <leader>b :TagbarToggle<CR>
 let g:prettier#exec_cmd_async = 1
 let g:prettier#config#bracket_spacing = 'true'
 autocmd FileType javascript set formatprg=prettier\ --stdin
+
+" ale linting settings
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_linters = {'javascript': ['eslint']}
