@@ -1,0 +1,2 @@
+EXCLUDES="Brewfile bash-powerline.sh bash_history bootstrap_mac.sh output"
+DOTFILES_DIRS="$HOME/dotfiles"

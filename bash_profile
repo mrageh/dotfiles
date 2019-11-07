@@ -15,6 +15,13 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+#NPM TOKEN CODESHIP
+export NPM_TOKEN='5f18feff-6dda-42dc-973a-be90fb8021bd'
 #Setup NVM
 export NVM_DIR="$HOME/.nvm"
  . "$(brew --prefix nvm)/nvm.sh"
+
+#load chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby-2.6.3

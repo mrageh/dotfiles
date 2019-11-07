@@ -7,7 +7,7 @@
   cm = commit
   co = checkout
   graph = log --oneline --graph --decorate --all
-  hist = log --pretty=format:'%Cblue%h%Creset %C(cyan)%ad%Creset - %s %C(white)%d%Creset %Cgreen<%an>%Creset' --graph --date=short
+  hist = log --pretty=format:'%Cblue%h%Creset %C(cyan)%ad%Creset - %s %C(white)%d%Creset %Cgreen<%an>%Creset' --graph --date=human
   me = !UN=$(git config user.name)&& git log --author="\"$UN\"" --pretty=format:'%h %cd %s' --date=short
   log-fancy  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
   p = push
@@ -22,7 +22,7 @@
 [color]
   ui = true
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/adam/.gitignore
   autocrlf = input
   pager = diff-so-fancy | less --tabs=4 -RFX
 [fetch]
@@ -38,32 +38,10 @@
   autostash = true
 [user]
   name  = mrageh
-  email = adam@mrageh.com
-  signingkey = 0E5703B7
+	email = madam@cloudbees.com
+	signingkey = F8182BB259C9B9D2
 [credential]
   helper = osxkeychain
-[git-pair]
-  pattern = pairing+%name+%name@futurelearn.com
-  authors = sebjacobs <me@sebjacobs.com>
-  authors = mseckington <mseckington@gmail.com>
-  authors = zetter <zetter@gmail.com>
-  authors = chrislo <chris.lowis@gmail.com>
-  authors = eightbitraptor <matt@eightbitraptor.com>
-  authors = jcoglan <jcoglan@gmail.com>
-  authors = alssndro <alex.mura@futurelearn.com>
-  authors = wannabefro <sam.mctaggart@gmail.com>
-  authors = mrageh <adam.magan@futurelearn.com>
-  authors = nicky <nicky.thompson@futurelearn.com>
-  authors = urbanautomaton <simon@urbanautomaton.com>
-  authors = victorarias <victor.arias@futurelearn.com>
-  authors = cristinaRO <cristina.rotaru@futurelearn.com>
-  authors = daniel-ferguson <danielferguson@me.com>
-  authors = scarerkite <sarah.knight@futurelearn.com>
-  authors = smfeest <stephen.feest@futurelearn.com>
-  authors = mattbee <matt.bee@futurelearn.com>
-  authors = ohthatjames <james.hunt@futurelearn.com>
-  authors = roberta <roberta.mataityte@futurelearn.com>
-  authors = tomstuart <tom.stuart@futurelearn.com>
 [color "diff-highlight"]
   oldNormal = 196 bold #https://jonasjacek.github.io/colors/
   oldHighlight = 196 bold 52
@@ -80,3 +58,5 @@
   old = 196 bold
   new = 112 bold
   whitespace = 196 reverse
+[diff "sopsdiffer"]
+	textconv = sops -d

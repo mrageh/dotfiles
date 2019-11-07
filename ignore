@@ -6,7 +6,9 @@
 .git/
 log/
 node_modules/
+public/
 public/assets
 public/uploads
 tmp/
 vendor/
+target/

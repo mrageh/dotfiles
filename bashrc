@@ -2,7 +2,7 @@
 export PATH="$HOME/.bin:$PATH"
 
 #Editors
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # recommended by brew doctor
@@ -23,7 +23,7 @@ g() {
 }
 
 #Setup mysql
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/mysql/bin:$PATH"
 
 #Custom scripts
 export PATH="~/custom/scripts:$PATH"
@@ -35,14 +35,19 @@ source ~/dotfiles/bash-powerline.sh
 eval "$(direnv hook bash)"
 
 #rbenv setup
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 #Setup go
 export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
+export GOBIN=$GOPATH/bin
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #Enable iex shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+#Use rg with FZF
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export PATH="/usr/local/opt/go@1.12/bin:$PATH"
+export PATH="/Users/adam/dev/go/src/github.com/jenkins-x/jx/build:$PATH"
