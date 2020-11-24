@@ -23,5 +23,4 @@ export NVM_DIR="$HOME/.nvm"
 
 #load chruby
 source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.6.3
+chruby ruby-2.5.1

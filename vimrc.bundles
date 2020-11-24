@@ -9,25 +9,28 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go'
 Plug 'junegunn/vim-easy-align'
-Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'thoughtbot/vim-rspec'
+Plug 'towolf/vim-helm'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
-Plug 'rust-lang/rust.vim'
 Plug 'prettier/vim-prettier'
 Plug 'slim-template/vim-slim'
+Plug 'jparise/vim-graphql'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'racer-rust/vim-racer'
-
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'pangloss/vim-javascript'      " JavaScript support
+Plug 'leafgarland/typescript-vim'   " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'     " JS and JSX syntax
+Plug 'jparise/vim-graphql'          " GraphQL syntax
+Plug 'peitalin/vim-jsx-typescript'  " React TypeScript support
 
 " Add plugins to &runtimepath
 call plug#end()

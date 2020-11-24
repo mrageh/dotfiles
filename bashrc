@@ -40,14 +40,22 @@ eval "$(direnv hook bash)"
 
 #Setup go
 export GOPATH=$HOME/dev/go
-export GOBIN=$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
+export GO111MODULE=on
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #Enable iex shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+
 #Use rg with FZF
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export PATH="/usr/local/opt/go@1.12/bin:$PATH"
 export PATH="/Users/adam/dev/go/src/github.com/jenkins-x/jx/build:$PATH"
+export VAULT_AWS_ACCESS_KEY_ID=AKIARRHJNMV4DCB6KLW4
+export VAULT_AWS_SECRET_ACCESS_KEY=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
+export JX_GIT_TOKEN=737c512e84dcb8b5ffa9f6fae9e1d71ec0da46aa
+alias goland=/usr/local/bin/goland
+
+#SDM vars
+export GATEWAY_SERVER=http://localhost:4000
