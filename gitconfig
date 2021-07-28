@@ -23,8 +23,9 @@
   ui = true
 [core]
 	excludesfile = /Users/adam/.gitignore
-  autocrlf = input
+	autocrlf = input
   pager = diff-so-fancy | less --tabs=4 -RFX
+	whitespace = cr-at-eol
 [fetch]
   prune = true
 [merge]
@@ -37,11 +38,15 @@
   autosquash = true
   autostash = true
 [user]
-  name  = mrageh
-	email = madam@cloudbees.com
 	signingkey = F8182BB259C9B9D2
+	name = mrageh
+	email = madam@cloudbees.com
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+[includeIf "gitdir:~/dev/work/"]
+  path = ~/dev/work/.gitconfig
 [credential]
-  helper = osxkeychain
+	helper = store
 [color "diff-highlight"]
   oldNormal = 196 bold #https://jonasjacek.github.io/colors/
   oldHighlight = 196 bold 52
@@ -60,3 +65,7 @@
   whitespace = 196 reverse
 [diff "sopsdiffer"]
 	textconv = sops -d
+[secrets]
+	providers = opscore security run git-secrets-provider -q
+[pull]
+	ff = only

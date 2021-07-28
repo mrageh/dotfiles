@@ -34,20 +34,35 @@ source ~/dotfiles/bash-powerline.sh
 # Some direnv stuff
 eval "$(direnv hook bash)"
 
-#rbenv setup
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
 #Setup go
 export GOPATH=$HOME/dev/go
-export GOBIN=$GOPATH/bin
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH=$GOPATH/bin:$PATH
+export GO111MODULE=auto
 
 #Enable iex shell history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-#Use rg with FZF
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export PATH="/usr/local/opt/go@1.12/bin:$PATH"
-export PATH="/Users/adam/dev/go/src/github.com/jenkins-x/jx/build:$PATH"
+#fzf
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export FZF_DEFAULT_OPTS='-m --height 40% --layout=reverse --border'
+export FZF_CTRL_T_OPTS="--preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+export SKIM_DEFAULT_COMMAND="rg --files || fd || find ."
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+_fzf_compgen_path() {
+  echo "$1"
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  echo "$1"
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+#Google cloud SDK
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"

@@ -1,26 +1,25 @@
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-
-" Omni
-set omnifunc=syntaxcomplete#Complete
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-	syntax on
-endif
+set termguicolors
 
 if filereadable(expand("~/.vimrc.bundles"))
 	source ~/.vimrc.bundles
 endif
+
+set background=dark
+colorscheme NeoSolarized
+
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+command! -nargs=0 OR :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 filetype plugin indent on
 
@@ -36,9 +35,9 @@ augroup vimrcEx
 				\ endif
 
 	" Set syntax highlighting for specific file types
-	autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-	autocmd BufRead,BufNewFile *.md set filetype=markdown
-	autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+	" autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+	" autocmd BufRead,BufNewFile *.md set filetype=markdown
+	" autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 augroup END
 
 " Softtabs, 2 spaces
@@ -54,10 +53,6 @@ endif
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-" Use Ag over Grep
-set grepprg=rg
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -86,21 +81,24 @@ inoremap <S-Tab> <c-n>
 nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+" nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+" nnoremap <Leader>s :call RunNearestSpec()<CR>
+" nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Generate tags for file
-nnoremap <Leader>d :TagBarToggle<CR>
+" nnoremap <Leader>d :TagBarToggle<CR>
 
 " Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
+" nnoremap <Leader>r :RunInInteractiveShell<space>
 
 " Remap ctrl+p to FZF
 nnoremap <C-p> :Files<Cr>
 
 " Grep superpower
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <C-g> :Rg<Cr>
+nnoremap <silent> <Leader>g :Commits<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -128,10 +126,10 @@ set diffopt+=vertical
 let g:rspec_command = "!bundle exec rspec {spec}"
 
 " Drop fold if it set.
-let b:javascript_fold='true'
-
-" Auto format elm code
-let g:elm_format_autosave = 1
+"-- FOLDING --
+set foldmethod=syntax "syntax highlighting items specify folds
+" set foldcolumn=1 "defines 1 col at window left, to indicate folding
+set foldlevelstart=99 "start file with all folds opened
 
 " Highlights all occurences when searching
 set hlsearch
@@ -140,20 +138,12 @@ set hlsearch
 autocmd! BufWrite * mark ' | silent! %s/\s\+$// | norm ''
 
 " For all text files set 'textwidth' to 78 characters.
-autocmd FileType text setlocal textwidth=78
+autocmd FileType text setlocal textwidth=80
 
 set complete=.,w,t
 
 " kj escape
 :imap kj <Esc>
-
-" Color syntax highlighting
-syntax on
-
-" Set colorscheme
-syntax enable
-set background=dark
-colorscheme solarized
 
 " Fast insert of debugger command
 
@@ -166,19 +156,13 @@ let g:html_indent_inctags = "html,body,head,tbody"
 " Auto format rust
 let g:rustfmt_autosave = 1
 
-" Create folds for ruby
-"let ruby_fold = 1
-"let ruby_foldable_groups = "class do begin case { % string # << if def"
-
+" Display file variables/functions in tagbar
 map <Leader>b :TagbarToggle<CR>
 
 " Vim prettier
 let g:prettier#exec_cmd_async = 1
 let g:prettier#config#bracket_spacing = 'true'
 autocmd FileType javascript set formatprg=prettier\ --stdin
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 " Racer
 set hidden
@@ -189,29 +173,28 @@ au FileType rust nmap <leader>rx <Plug>(rust-doc)
 au FileType rust nmap <leader>rd <Plug>(rust-def)
 au FileType rust nmap <leader>rs <Plug>(rust-def-split)
 
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
 " Conquer of Completion, aka CoC settings
-
-" if hidden is not set, TextEdit might fail.
-set hidden
-" Some servers have issues with backup files, see #649
+" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-" Better display for messages
-set cmdheight=2
-" You will have bad experience for diagnostic messages when it's default 4000.
+
+" Give more space for displaying messages.
+set cmdheight=3
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
 set updatetime=300
-" don't give |ins-completion-menu| messages.
+
+" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-" always show signcolumns
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
 set signcolumn=yes
+
 " Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -226,94 +209,177 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
+" Use K to show documentation in preview window.
+" nnoremap <silent> K :call <SID>ShowDocIfNoDiagnostic()<CR>
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
+  if (CocHasProvider('hover'))
     call CocAction('doHover')
   endif
 endfunction
+nnoremap <silent> H :call <sid>show_documentation()<cr>
 
-" Highlight symbol under cursor on CursorHold
+" show diagnostics, otherwise documentation, on hold
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (CocHasProvider('hover'))
+    if (coc#float#has_float() == 0)
+      silent call CocActionAsync('doHover')
+    endif
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <sid>show_hover_doc()
+autocmd CursorHold * :call <sid>show_hover_doc()
+
+" Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
+" Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" Formatting selected code.
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
+  " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Remap for do codeAction of current line
+" Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
+" Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+" Introduce function text object
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+" xmap if <Plug>(coc-funcobj-i)
+" xmap af <Plug>(coc-funcobj-a)
+" omap if <Plug>(coc-funcobj-i)
+" omap af <Plug>(coc-funcobj-a)
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+" Use <TAB> for selections ranges.
+" NOTE: Requires 'textDocument/selectionRange' support from the language server.
+" coc-tsserver, coc-python are the examples of servers that support it.
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
 
-" Use `:Format` to format current buffer
+" Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-" Use `:Fold` to fold current buffer
+" Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-" use `:OR` for organize import of current buffer
+
+" Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-" Using CocList
-" Show all diagnostics
+
+" Mappings using CoCList:
+" Show all diagnostics.
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
+" Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
+" Show commands.
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
+" Find symbol of current document.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
+" Search workspace symbols.
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
+" Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+"coc-highlights highlights documents
+highlight CocErrorHighlight ctermfg=Red  guifg=#ff0000
+highlight CocWarningHighlight  ctermfg=Brown guifg=#ff922b
+highlight CocUnusedHighlight ctermfg=Yellow guifg=#b36b00
+highlight CocInfoHighlight  ctermfg=Yellow guifg=#fab005
+highlight CocHintHighlight  ctermfg=Blue guifg=#15aabf
+highlight CocDeprecatedHighlight ctermfg=Brown guifg=#4d2e00
+highlight CocHighlightText ctermfg=White guifg=#e6e6e6
+
+"fzf super fast searcher
+set rtp+=/usr/local/opt/fzf
+
+"Use TAB to autocomplete
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" GOLANG
+" VIM-GO commands
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+"
+" disable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
+
+" Syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+let g:go_def_mapping_enabled = 0
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+autocmd BufEnter *.go nmap <leader>t  <Plug>(go-test)
+autocmd BufEnter *.go nmap <leader>tt <Plug>(go-test-func)
+autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <leader>ii <Plug>(go-implements)
+autocmd BufEnter *.go nmap <leader>ci <Plug>(go-describe)
+autocmd BufEnter *.go nmap <leader>cc <Plug>(go-callers)
+nmap <leader>cr <Plug>(coc-references)

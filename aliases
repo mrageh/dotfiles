@@ -1,4 +1,6 @@
 # Unix
+alias ls="exa --group-directories-first"
+alias cat="bat"
 alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
@@ -28,9 +30,6 @@ alias rc="rails console"
 alias rs="rails server"
 alias fs="foreman start"
 alias be="bundle exec "
-alias c="be cucumber"
-alias cw="be cucumber -p wip"
 alias m="bundle exec rake db:migrate db:rollback && bundle exec rake db:migrate"
-alias rk="rake"
 
 __git_complete g __git_main
