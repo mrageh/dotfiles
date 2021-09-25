@@ -31,7 +31,7 @@ Plug 'peitalin/vim-jsx-typescript'  " React TypeScript support
 Plug 'overcache/NeoSolarized'
 Plug 'tomlion/vim-solidity'
 Plug 'jiangmiao/auto-pairs'
-
+Plug 'stephpy/vim-yaml'
 
 " Add plugins to &runtimepath
 call plug#end()
