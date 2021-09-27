@@ -22,14 +22,14 @@ g() {
   fi
 }
 
+#Modern command prompt
+eval "$(starship init bash)"
+
 #Setup mysql
 export PATH="/usr/local/opt/mysql/bin:$PATH"
 
 #Custom scripts
 export PATH="~/custom/scripts:$PATH"
-
-# Source prompt
-source ~/dotfiles/bash-powerline.sh
 
 # Some direnv stuff
 eval "$(direnv hook bash)"
