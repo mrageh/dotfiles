@@ -23,3 +23,6 @@ fi
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 chruby ruby-2.6.3
+
+# Created by `pipx` on 2021-10-02 13:36:59
+export PATH="$PATH:/Users/adam/.local/bin"

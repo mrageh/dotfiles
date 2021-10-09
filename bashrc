@@ -71,3 +71,11 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/compl
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+# Set it so ~/.pyenv provides Python before others of the same name:
+export PYENV_ROOT=$(pyenv root)
+export PATH="$PYENV_ROOT/shims:$PATH"
+
+#alias python=/Users/adam/.pyenv/versions/3.9.7/bin/python
+
+# Created by `pipx` on 2021-10-02 13:36:59
+export PATH="$PATH:/Users/adam/.local/bin"
