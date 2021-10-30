@@ -69,3 +69,5 @@
 	providers = opscore security run git-secrets-provider -q
 [pull]
 	ff = only
+[init]
+	defaultBranch = development
