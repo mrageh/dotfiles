@@ -138,23 +138,38 @@ fancy_echo "Updating Unix tools ..."
 brew_install_or_upgrade 'ctags'
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'openssl'
+brew_install_or_upgrade 'neovim'
 brew_install_or_upgrade 'reattach-to-user-namespace'
-brew_install_or_upgrade 'the_silver_searcher'
+brew_install_or_upgrade 'ripgrep'
 brew_install_or_upgrade 'tmux'
-brew_install_or_upgrade 'vim'
 brew_install_or_upgrade 'bash'
-
-fancy_echo "Updating image tools ..."
-brew_install_or_upgrade 'imagemagick'
-
-fancy_echo "Updating testing tools ..."
-brew_install_or_upgrade 'qt'
+brew_install_or_upgrade "ssh-copy-id"
+brew_install_or_upgrade "starship"
+brew_install_or_upgrade "pidof"
+brew_install_or_upgrade "jq"
+brew_install_or_upgrade "httpie"
+brew_install_or_upgrade "htop"
+brew_install_or_upgrade "nmap"
+brew_install_or_upgrade "fd"
+brew_install_or_upgrade "fzf"
+brew_install_or_upgrade "pv"
+brew_install_or_upgrade "fzf"
+brew_install_or_upgrade "htop"
+brew_install_or_upgrade "direnv"
+brew_install_or_upgrade "cowsay"
+brew_install_or_upgrade "bash-completion"
+brew_install_or_upgrade "tree"
+brew_install_or_upgrade "procs"
+brew_install_or_upgrade "tokei"
 
 fancy_echo "Updating programming languages ..."
 brew_install_or_upgrade 'libyaml' # should come after openssl
-brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
+brew_install_or_upgrade 'ruby-install'
+brew_install_or_upgrade 'go'
+brew_install_or_upgrade 'pyenv'
+brew_install_or_upgrade 'nvm'
 
 fancy_echo "Updating databases ..."
 brew_install_or_upgrade 'postgres'
@@ -164,5 +179,5 @@ brew_launchctl_restart 'postgresql'
 brew_launchctl_restart 'mysql'
 brew_launchctl_restart 'redis'
 
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
+#number_of_cores=$(sysctl -n hw.ncpu)
+#bundle config --global jobs $((number_of_cores - 1))
